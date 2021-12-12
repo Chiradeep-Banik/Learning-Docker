@@ -3,7 +3,12 @@ import express from 'express';
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send('<h1>Hello World!</h1>');
+    res.send(`
+        <head>
+            <title>Helloooo</title>
+        </head>
+        <h1>Hello Docker</h1>
+    `);
 });
 
 app.listen(1313,()=>{

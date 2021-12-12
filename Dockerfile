@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 1313
 
-CMD [ "node", "index.js" ]
+CMD [ "npm","run", "dev" ]
