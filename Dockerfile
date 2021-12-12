@@ -8,6 +8,8 @@ RUN npm install
 
 COPY . .
 
-EXPOSE 1313
+ENV PORT=1313       
+
+EXPOSE ${PORT}
 
 CMD [ "npm","run", "dev" ]
