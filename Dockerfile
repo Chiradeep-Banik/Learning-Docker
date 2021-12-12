@@ -4,7 +4,10 @@ WORKDIR /app
 
 COPY package.json .
 
-RUN npm install
+RUN if [ "NODE_ENV"="production" ]; \ 
+    then npm install --production; \
+    else npm install; \
+    fi
 
 COPY . .
 
@@ -12,4 +15,4 @@ ENV PORT=1313
 
 EXPOSE ${PORT}
 
-CMD [ "npm","run", "dev" ]
+CMD [ "npm", "run", "start" ]

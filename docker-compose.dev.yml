@@ -1,0 +1,11 @@
+services:
+  docker-tut:
+    build:
+      context: .
+      args:
+        - NODE_ENV=development
+    volumes:
+      - .:/app
+    environment:
+      - NODE_ENV=development
+    command: npm run dev
