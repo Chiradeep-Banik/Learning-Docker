@@ -4,3 +4,16 @@ services:
       - "1313:1313"
     environment:
       - PORT=1313
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.4.2
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=root
+    volumes:
+      - db:/data/db
+
+volumes:
+  db: null
