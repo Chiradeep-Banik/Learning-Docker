@@ -1,0 +1,20 @@
+services:
+  postgres:
+    image: postgres
+    command: bash -c "wget
+      https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./data:/var/lib/postgresql/data
+  pg-admin:
+    image: dpage/pgadmin4
+    ports:
+      - "5050:80"
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.admin
+      - PGADMIN_DEFAULT_PASSWORD=admin
