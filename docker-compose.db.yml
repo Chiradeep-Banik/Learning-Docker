@@ -1,8 +1,6 @@
 services:
   postgres:
     image: postgres
-    command: bash -c "wget
-      https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
