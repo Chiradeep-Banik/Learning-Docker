@@ -11,9 +11,9 @@ RUN if [ "NODE_ENV"="production" ]; \
 
 COPY . .
 
-RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)" -- \
-    -t robbyrussell \
-    -p 'history-substring-search'
+# RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.2/zsh-in-docker.sh)" -- \
+#     -t robbyrussell \
+#     -p 'history-substring-search'
 
 ENV PORT=1313       
 

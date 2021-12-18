@@ -1,19 +1,18 @@
 services:
-  docker-tut:
+  web:
     ports:
       - "1313:1313"
     environment:
       - PORT=1313
     depends_on:
-      - mongo
-
-  mongo:
-    image: mongo:4.4.2
+      - database
+  database:
+    image: postgres
     environment:
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=root
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
     volumes:
-      - db:/data/db
-
-volumes:
-  db: null
+      - ./data:/var/lib/postgresql/data
